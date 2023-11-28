@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firewall Rules</title>
+  </head>
+  <body>
+    <h1>Firewall Rules</h1>
+    <ul>
+      {% for rule in rules %}
+      <li>
+        {{ rule.name }} - {{ rule.source_ip }} to {{ rule.destination_ip }} ({{
+        rule.action }})
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'firewall:add_rule' %}">Add Rule</a>
+  </body>
+</html>
